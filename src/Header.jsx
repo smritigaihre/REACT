@@ -9,11 +9,13 @@ export const Header = (props) => {
           <h1 className="fw-light">{props.title}</h1>
           <p className="lead text-body-secondary">
             {props.desc}
+            
           </p>
           <p>
-            <a href="#" className="btn btn-primary my-2">
+            
+            <utton onClick={props.onAlbumClick} href="#" className="btn btn-primary my-2">
               Main call to action
-            </a>
+            </utton>
             <a href="#" className="btn btn-secondary my-2">
               Secondary action
             </a>

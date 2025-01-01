@@ -11,12 +11,18 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 function App() {
   const [count, setCount] = useState(0)
+const visitAlbum = () =>{
+  alert('Album Visited');
 
+ 
+}
   return (
     <>
  
   <Navbar/>
-  <Header title={"Album Description"} desc={"This is a dummy example of Album."} />
+  <Header title={"Album Description"} desc={"This is a dummy example of Album."}
+  onAlbumClick ={visitAlbum}
+  />
   <Thumbnail />
   <Footer/>
  
