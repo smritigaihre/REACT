@@ -1,6 +1,14 @@
 import React from 'react'
 
 export const AlbumList = (props) => {
+
+  const {Mylist, edit} = props;
+
+  const onEditClickOperation=(item) => {
+    item = 'New Name'
+    edit(item)
+  }
+
   return (
     <>
     {
@@ -32,13 +40,13 @@ export const AlbumList = (props) => {
             </p>
             <div className="d-flex justify-content-between align-items-center">
               <div className="btn-group">
-                <button
+                <button onClick={props.view}
                   type="button"
                   className="btn btn-sm btn-outline-secondary"
                 >
                   View
                 </button>
-                <button
+                <button onClick={()=>onEditClickOperation(item)}
                   type="button"
                   className="btn btn-sm btn-outline-secondary"
                 >
