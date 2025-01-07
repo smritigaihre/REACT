@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const AlbumList = (props) => {
+  const[list, setList]= useState([]);
+
+  useEffect(() =>{
+    const fetchPostList =() =>{
+      fetch('https://jsonplaceholder.typicode.com/posts/')
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+    
+    }
+    fetchPostList()
+  },[])
 
   const {Mylist, edit} = props;
 
@@ -63,5 +74,6 @@ export const AlbumList = (props) => {
    }
   
   
-  </>)
+  </>
+  )
 }
