@@ -1,0 +1,67 @@
+/* body{
+    background-color: white;
+}
+
+.m_container{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px 30px;
+    gap: 10px;
+
+}
+
+.m_item{
+    color: black;
+    font-size: 20;
+    border: 1px solid #ccc;
+}
+
+.m_item span{
+    color:red;
+}
+
+.m_item img{
+    width:250px;
+} */
+
+body {
+    background-color: white;
+    margin: 0; /* Remove body margin */
+    padding: 0;
+  }
+  
+  .m_container {
+    display: flex;
+    flex-wrap: wrap; /* Allow boxes to wrap */
+    gap: 20px; /* Equal gap between boxes */
+    justify-content: center; /* Center boxes horizontally */
+    align-items: flex-start; /* Align items to the top */
+    margin: 20px auto; /* Center container in the view */
+    max-width: calc(100% - 40px); /* Prevent container overflow */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding in dimensions */
+  }
+  
+  .m_item {
+    flex: 1 1 250px; /* Flexible width, minimum 250px */
+    max-width: 250px; /* Ensure consistent size */
+    color: black;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    padding: 10px; /* Add spacing inside the box */
+    box-sizing: border-box; /* Include padding and border in dimensions */
+    text-align: center; /* Center text inside the box */
+    background-color: #f9f9f9; /* Light background for visibility */
+  }
+  
+  .m_item span {
+    color: red;
+  }
+  
+  .m_item img {
+    width: 100%; /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent extra space below images */
+  }
+  
