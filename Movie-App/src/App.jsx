@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Movie from './components/movie'
+
  
 
 
@@ -7,7 +8,10 @@ import Movie from './components/movie'
 function App() {
 
   return (
-  <Movie/>
+    <Movie/>
+  
+  
+
   )
 }
 
