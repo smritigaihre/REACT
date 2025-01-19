@@ -12,23 +12,38 @@ const Movie= ()=> {
     const[movies, setMovies]= useState([]);
     const [page, setPage]= useState(1)
 
+    const [search, setSearch] = useState('')
+
 
     const fetchMovieData = async () => {
+
+      let url ='https://api.themoviedb.org/3/movie/popular'
+      if(search !== '') {
+        url = 'https://api.themoviedb.org/3/search/movie'
+      }
+
+      console.log(search)
     
-        const json = await axios.get('https://api.themoviedb.org/3/movie/popular',{params:{
+        const json = await axios.get(url,{params:{
           api_key: '923957623adda598d87bf801866141fb',
-          page:page
+          page:page,
+          query: search
          }});
-         
        // const json = await response.json();
-        console.log(json.data);
+        // console.log(json.data);
+        if(search == '')
         setMovies([...movies,...json.data.results])
+      else 
+        setMovies([...json.data.results])
     }
 
     useEffect(()=>{
-      
         fetchMovieData()
     },[])
+
+    useEffect(()=>{
+      fetchMovieData()
+  },[search])
 
     // const mItem ={
     //     color:'white',
@@ -44,10 +59,17 @@ const Movie= ()=> {
       fetchMovieData()
     }
 
+    const onSeachText = (data) => {
+      setSearch(data)
+      console.log(data)
+
+     // fetchMovieData()
+    };
+
 
   return (
 <>
-    <SearchBar/>
+    <SearchBar onTextChange={onSeachText}/>
     <div className='m_container'>
       
       {
