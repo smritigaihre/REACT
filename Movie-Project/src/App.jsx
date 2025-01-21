@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+
+import React from 'react'
+
+
 
 import HeadingComponent from './components/Header/HeadingComponent'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -22,7 +25,7 @@ function App() {
   
       
         <>
-        <HeadingComponent/>
+        
         <RouterProvider router={myRoutes}/>
       </>
   

@@ -1,8 +1,11 @@
 import React from 'react'
+import HeadingComponent from '../Header/HeadingComponent';
 
 const About=()=> {
   return (
-    <div>About</div>
+    <div>
+      <HeadingComponent/>
+    </div>
   )
 }
 
